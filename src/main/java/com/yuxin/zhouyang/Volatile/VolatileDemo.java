@@ -1,4 +1,4 @@
-package com.yuxin.zhouyang;
+package com.yuxin.zhouyang.Volatile;
 /**
  * 1.验证volatile的可见性.
  *  1.1假如int number = 0; number变量之前没有添加volatile关键字修饰,没有可见性.

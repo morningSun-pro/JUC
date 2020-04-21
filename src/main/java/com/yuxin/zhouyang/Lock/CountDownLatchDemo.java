@@ -1,4 +1,6 @@
-package com.yuxin.zhouyang;
+package com.yuxin.zhouyang.Lock;
+
+import com.yuxin.zhouyang.Enum.CountryEnum;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -10,13 +12,14 @@ import java.util.concurrent.CountDownLatch;
 public class CountDownLatchDemo {
     public static void main(String[] args) throws InterruptedException {
         CountDownLatch countDownLatch = new CountDownLatch(6);
+
         for (int i = 1; i <= 6; i++) {
             new Thread(() -> {
                 System.out.println(Thread.currentThread().getName() + "灭亡");
-                countDownLatch.countDown();  //
+                countDownLatch.countDown();  //线程计数减1
             }, CountryEnum.forEach_CountryEnum(i).getCountryName()).start();
         }
-        countDownLatch.await();
+        countDownLatch.await(); //主线程等待上面线程结束才能执行
         System.out.println("秦一统华夏");
     }
 }

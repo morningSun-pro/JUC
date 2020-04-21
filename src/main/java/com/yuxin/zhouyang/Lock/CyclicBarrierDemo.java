@@ -1,4 +1,4 @@
-package com.yuxin.zhouyang;
+package com.yuxin.zhouyang.Lock;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
@@ -9,13 +9,14 @@ import java.util.concurrent.CyclicBarrier;
  */
 public class CyclicBarrierDemo {
     public static void main(String[] args) {
+        //直到最后一个人到了才会执行这个线程
         CyclicBarrier cyclicBarrier = new CyclicBarrier(10,() ->{ System.out.println("人到齐了,会议可以开始"); });
 
         for (int i = 1; i <= 10; i++) {
             new Thread(() -> {
                 try {
                     System.out.println(Thread.currentThread().getName()+"\t 进来了");
-                    cyclicBarrier.await();
+                    cyclicBarrier.await(); //人数不够的情况下持续等待
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

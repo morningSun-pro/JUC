@@ -1,4 +1,4 @@
-package com.yuxin.zhouyang;
+package com.yuxin.zhouyang.Lock;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
@@ -7,8 +7,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * 自旋锁
  */
 public class SpinlockDemo {
-    AtomicReference<Thread> reference = new AtomicReference<>();
-
+    AtomicReference<Thread> reference = new AtomicReference<>();  //原子引用线程
     public void lock(){
         Thread thread = Thread.currentThread();
         System.out.println(Thread.currentThread().getName()+"\t come in here");

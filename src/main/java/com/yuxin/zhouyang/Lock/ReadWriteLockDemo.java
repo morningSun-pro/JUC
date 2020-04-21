@@ -1,4 +1,4 @@
-package com.yuxin.zhouyang;
+package com.yuxin.zhouyang.Lock;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
- * 读写锁
+ * 读写锁  读写分离思想
  */
 class myCache{
     private ReentrantReadWriteLock rwLock = new ReentrantReadWriteLock();

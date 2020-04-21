@@ -1,6 +1,5 @@
-package com.yuxin.zhouyang;
+package com.yuxin.zhouyang.Lock;
 
-import java.security.PrivateKey;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -15,12 +14,10 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 class ShareResource{
     private int number =1;   //标志位
-
     private Lock lock = new ReentrantLock();
     private Condition condition1 = lock.newCondition();
     private Condition condition2 = lock.newCondition();
     private Condition condition3 = lock.newCondition();
-
     public void print5(){
         lock.lock();
         try{
@@ -75,7 +72,7 @@ class ShareResource{
         }
     }
 }
-public class LockDemo {
+public class ReentrantLockDemo {
     public static void main(String[] args) {
         ShareResource shareResource = new ShareResource();
         for (int i = 1; i <= 10 ; i++) {

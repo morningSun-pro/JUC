@@ -1,4 +1,4 @@
-package com.yuxin.zhouyang;
+package com.yuxin.zhouyang.CAS;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

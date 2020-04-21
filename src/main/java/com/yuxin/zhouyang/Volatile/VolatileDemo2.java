@@ -1,4 +1,4 @@
-package com.yuxin.zhouyang;
+package com.yuxin.zhouyang.Volatile;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

@@ -1,6 +1,5 @@
-package com.yuxin.zhouyang;
+package com.yuxin.zhouyang.Thread;
 
-import java.util.*;
 import java.util.concurrent.*;
 
 /**
